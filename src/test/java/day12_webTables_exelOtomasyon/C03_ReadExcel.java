@@ -32,7 +32,7 @@ public class C03_ReadExcel {
         // bilgisayarimizda olan bir dosyaya erisebilmek icin FileInputStream Class'indan obje olusturalim
         String dosyaYolu = System.getProperty("user.dir")+ "/src/test/java/day12_webTables_excelOtomasyon/ulkeler.xlsx";
 
-        FileInputStream fis = new FileInputStream(dosyaYolu);
+        FileInputStream fis = new FileInputStream(dosyaYolu);//excel'dekileri okuyup bize getirir
 
         // projemize ekledigimiz POI kutuphanelerini kullanarak
         // class'imizin icinde istenen excel'in bir kopyasini olusturalim
