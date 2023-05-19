@@ -27,6 +27,7 @@ public class C01_JavaScriptExecutor extends TestBase {
         JavascriptExecutor jse = (JavascriptExecutor) driver;
 
         // jse ile butona kadar scroll (taslak) yapalim
+        //scroll'lar birer kod parçacığıdır
         jse.executeScript("arguments[0].scrollIntoView();",exploreButonu);
         //bu obje (exploreButonu) görünene kadar scroll yap
         //"arguments[0].scrollIntoView();" scroll'u ile aşağıya kadar iner
