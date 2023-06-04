@@ -15,6 +15,9 @@ public class TestBase {//parent class olmuş oluyor
         bu class'i parent edinecek class'larda
         driver olusturmamak ve ayarlari yeniden yapmamak icin kullaniyoruz
         yani child class'lardan kullanacağız, procted access modifier'ı ile
+
+        TestBase clss'ı ile her test methodunda ortak olan 4 adımın tekrar tekrar
+        yazılmaması konusunda kolaylık sağlıyor
      */
 
     protected WebDriver driver;//web driver'ımızı child class'tan kullanabilmek için access modifier kullanılır
