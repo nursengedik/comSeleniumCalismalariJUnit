@@ -30,7 +30,8 @@ public class C01_BeforeAfterClass {
     public static void setup(){//setup ismini vermemizin nedeni gerekli ayarlamaları yaptığımız için
         //öncelikle testi okuyup açma ve kapamayı bir defa class ın başında ve sonunda mı yoksa
         //methodundan önce veya sonra mı yapmalıyım, 1 kere,BeforeClass bir kere classın başında çalışıp
-        //sonunda da bitirsin, yani driver her test için sayfayı açıp kapatmak zorunda olmayacak
+        //sonunda da bitirsin, yani her test methodu için ortak olan 4 adım her testte yazılmayacak
+        //BeforeClass her test methodunun başında çalışıp sayfayı açacak ve AfterClass ile sayfa kapanacak
         //day06-C05 te olduğu gibi
 
         WebDriverManager.chromedriver().setup();
