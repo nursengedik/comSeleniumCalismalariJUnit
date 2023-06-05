@@ -77,7 +77,7 @@ public class C05_DropdownMenu {
         int expectedSize=4;
         int actualSize= optionsList.size();
 
-        Assert.assertEquals(expectedSize,actualSize);
+        Assert.assertEquals(expectedSize,actualSize);//assert hata veriyor, beklediğin 4 ama gerçek boyut 3
 
         Thread.sleep(3000);
     }
