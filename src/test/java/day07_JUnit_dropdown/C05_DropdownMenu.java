@@ -41,15 +41,20 @@ public class C05_DropdownMenu {
         driver.get("https://the-internet.herokuapp.com/dropdown");
 
         //	1.Index kullanarak Seçenek 1’i (Option 1) seçin ve yazdırın
+        //1. adım dropdown mwnü locate edilir
         WebElement dropdownMenuElementi= driver.findElement(By.xpath("//*[@id='dropdown']"));
+        //2. adım opşınları (seçenekleri) seçebilmemiz için Select class'ından obje oluşturulur
         Select select= new Select(dropdownMenuElementi);
-        select.selectByIndex(1);//burada index kullanarak Option 1'i seçtik, yazdırmamız isteniyor
+        //3. adım obje ile istediğim işlemi yapabilirim (istenen seçenek seçilir)
+        select.selectByIndex(1);//select objesi ile index kullanarak Option 1'i seçtik, yazdırmamız isteniyor
         System.out.println(select.getFirstSelectedOption().getText());//seçilen seçeneği (elementi) yazdırma
+        //Terminalde Option 1 yazdırır
         //getFirstSelectedOption()= biraz önce seçilmiş olan option getir demek
 
         //	2.Value kullanarak Seçenek 2'yi (Option 2) seçin ve yazdırın
-        select.selectByValue("2");
-        System.out.println(select.getFirstSelectedOption().getText());
+        select.selectByValue("2");//Seçenek 2'yi (Option 2) seçti
+        System.out.println(select.getFirstSelectedOption().getText());//burası da yazdırır
+        //Terminalde Option 2 yazdırır
 
         //	3.Visible Text(Görünen metin) kullanarak Seçenek 1’i (Option 1) seçin ve yazdırın
         select.selectByVisibleText("Option 1");
