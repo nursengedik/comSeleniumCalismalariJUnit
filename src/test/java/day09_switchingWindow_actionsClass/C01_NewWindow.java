@@ -24,14 +24,16 @@ public class C01_NewWindow extends TestBase {
         // amazon anasayfaya gidin
         driver.get("https://www.amazon.com");
         String ilkSayfaWHD= driver.getWindowHandle();
-        //amazondan wisequatır window'una gittikten sonra tekrar önceki window'a geçiş yaparken
-        // driver.switchTo().window(ilkSayfaWHD); window method'u bizden WindowHandle değerini isteyeceği için
-        //window'da iken yani window'u kapatmadan kaydederiz, kapatıp açınca WHD değişir
+        //amazondan wisequatır window'una gittikten sonra tekrar önceki window'a (amazona) geçiş yaparken
+        //driver.switchTo().window(ilkSayfaWHD); window method'u bizden WindowHandle değerini isteyeceği için
+        //window'da iken (ilk sayfada) yani window'u kapatmadan handle değerini kaydederiz,
+        //kapatıp açınca WHD değişir
 
         // title'in Amazon kelimesi icerdigini test edin
         String expectedIcerik = "Amazon";
         String actualTitle = driver.getTitle();
         Assert.assertTrue(actualTitle.contains(expectedIcerik));
+
         // yeni bir tab acarak wisequarter anasayfaya gidin
         //yeni sayfa açılacağı için önce geçiş yapmalıyız
 
@@ -39,6 +41,14 @@ public class C01_NewWindow extends TestBase {
         Thread.sleep(1000);
         driver.get("https://www.wisequarter.com");
         String ikinciSayfaWHD= driver.getWindowHandle();
+         /*
+        driver.switchTo().newWindow() kullanarak actigimiz window'a driver otomatik olarak gecer
+
+        ANCAKKKKK....biz newWindow() method'unu kullanmadan bir link tikladigimizda yeni window
+        aciliyorsa driver eski window'da kalir, Yeni window'a driver'i gecirebilmek icin
+        yeni window'un WindowHandleDegerine ihtiyacimiz vardir.
+        */
+
         // url'in wisequarter icerdigini test edin
         expectedIcerik = "wisequarter";
         String actualUrl= driver.getCurrentUrl();
@@ -48,8 +58,8 @@ public class C01_NewWindow extends TestBase {
         // ve url'in amazon icerdigini test edin
 
         //bu test'te yeni tab açılarak farklı sayfaya gidildiği için geçiş işlemi driver.switchTo().window()
-        //methodu ile yapılır, navigate() methodu ise aynı (yeni tab açılmadan) sayfada window'lar arasında geçiş
-        // yapılırken kullanılır
+        //methodu ile yapılır, navigate() methodu ise aynı (yeni tab açılmadan) sayfada window'lar arasında
+        // geçiş yapılırken kullanılır
 
         driver.switchTo().window(ilkSayfaWHD);
         // hangi window'a gideceksek daha önce kaydettiğimiz WHD'den o window'un değeri girilir
