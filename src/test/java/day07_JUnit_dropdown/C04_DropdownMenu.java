@@ -84,6 +84,8 @@ public class C04_DropdownMenu {
         Select select = new Select(dropdownMenuElementi);
 
         //	1. Kategori menusunden Books secenegini  secin
+        //Books seçeneğinin locate'ni alırken valu veya index ile almak mantıklı değildir,
+        //görünür ismiyle almak daha doğru olur
         select.selectByVisibleText("Books");//görünür ismini ver
 
         //	2. Arama kutusuna Java yazin ve aratin
